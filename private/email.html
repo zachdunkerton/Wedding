@@ -1,0 +1,25 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>
+	Email
+</title>
+</head>
+<body>
+	<h1 style="text-align: center; font-family: Arial, sans-serif; color:#015249;border-bottom: 2px solid #eee;padding: 10px">Whose Coming</h1>
+	<h3 style = "font-family: Arial, sans-serif">Someone RSVP'ed</h3>
+    <table width="100%" style="border: 1px solid #eee;font-family: Arial, sans-serif">
+      <tr>
+          <td style="text-align: left; padding: 10px; border-bottom: 2px solid #000000;">First Name</td>
+          <td style="text-align: left; padding: 10px; border-bottom: 2px solid #000000;">Last Name</td>
+          <td style="text-align: left; padding: 10px; border-bottom: 2px solid #000000;">Coming?</td>
+      </tr>
+      {{#each people}}
+          <tr>
+            <td style="text-align: left; padding: 10px; border-bottom: 2px solid #000000;">{{this.firstName}}</td>
+            <td style="text-align: left; padding: 10px; border-bottom: 2px solid #000000;">{{this.lastName}}</td>
+            <td style="text-align: left; padding: 10px; border-bottom: 2px solid #000000;">{{this.coming}}</td>
+          </tr>
+        {{/each}}
+    </table>
+</body>
+</html>

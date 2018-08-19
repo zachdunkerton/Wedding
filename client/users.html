@@ -1,0 +1,74 @@
+<template name="users">
+  <body>
+    <div class="row" style="padding-top: 2em; width: 70%; margin: auto;">
+      <div class="col-md-2">
+        <button class = "addUser" style="float: left">Add User</button>
+      </div>
+      <div class="col-md-7">
+        
+      </div>
+      <div class="col-md-3" >
+        <input type="text" class = "search" placeholder="Search..." style="float:right">
+      </div>
+      
+    </div>
+    <div class="row" style="width: 70%; margin: auto;">
+    <table id='test'>
+    <tr>
+      <th>Email</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+    </tr>
+    {{#each addUsers}}
+    <tr class = 'rows'>
+      <td id = 'email'>{{email}}</td>
+      <td>{{firstName}}</td>
+      <td>{{lastName}}</td>
+    </tr>
+    {{/each}}
+  </table>
+  {{> addEditUserModal}}
+    </div>
+
+  <style>
+  .addUser{
+    padding: 10px;
+    font-weight: bolder;
+  }
+  .search{
+    padding: 10px;
+    font-weight: bolder;
+  }
+    #test{
+      width: 100%;
+    }
+    #test th{
+      background-color: #031229;
+      color: #f2f2f2;
+      font-size: 17px;
+      border: 2px solid #a5a5af;
+      border-bottom: 2px solid #ea6922;
+      text-align: left;
+      padding: 8px;
+    }
+    #test td{
+      border: 1px solid #000000;
+      text-align: left;
+      padding: 8px;
+    }
+    #test td{
+      font-size: 17px;
+    }
+    #test tr:nth-child(even){
+      background-color: #f2f2f2
+    }
+    #test tr:hover{background-color:#DCDCDC}
+    .addUser{
+      margin-bottom: 10px;
+    }
+    #test i{
+      margin:auto;
+    }
+  </style>
+</body>
+</template>

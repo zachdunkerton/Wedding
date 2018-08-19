@@ -1,0 +1,130 @@
+<template name="guest" cellspacing="0" cellpadding="0">
+  <head>
+<!--<link rel="stylesheet" type="text/css" href="checkbox.scss">-->
+</head>
+<link href="https://fonts.googleapis.com/css?family=Bellefair" rel="stylesheet">
+<div class="row">
+  <div class="col-md-1"></div>
+    <div class="col-md-5 col-xs-12" id="theTable">
+      <table id="guestTable" align="middle">
+        {{#each guest}}
+        <tr>
+          <td valign="top" style="display: inline-block;">
+            <input type="checkbox" id={{this.firstName}} value={{id}} name="checkbox"/>
+            <label for="{{this.firstName}}" id={{id}}>
+            </label>
+          </td>
+          {{#if plus1}}
+          <td style="text-align: left;" valign="bottom"><input type="text" id="plusone" value={{plusone_name}}></td>
+          {{else}}
+          <td style="text-align: left;" valign="bottom">{{this.firstName}} {{this.lastName}}</td>
+          {{/if}}          
+        </tr>
+        {{/each}}
+      </table>
+    </div>
+    <div class="col-md-5 col-xs-12" id="pic">
+      <img src="/images/pic6.jpg" width="100%" style="margin-top: 3em;">
+    </div>
+  </div>
+  <div class="row" style="width:100%; text-align:center;margin-top: 5em">
+    <div id="submitButtonDiv" >
+    <button class = "button" id="submitButton" style="text-align: center; display: inline-block;">Submit</button>
+  </div>
+  </div>
+
+
+  <div  id="loading">
+    <img src="/images/rings.jpg" alt="Loading..." style="width:15em; height = 15em;" align="middle">
+  </div>
+  <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+  <div class="row" id="thanks">Thank You!</div>
+  
+  <style>
+  #submitButton{
+    padding-top:.2em;
+    padding-bottom: .2em;
+    padding-left: 2em;
+    padding-right: 2em;
+    border: 1px solid #fcc288;
+    border-radius: 2px;
+    background:transparent;
+    font-family: 'Adamina', serif;
+    font-style: italic;
+    font-size: 2.5em;
+  }
+  #submitButtonDiv, #pic{
+    display: none;
+  }
+  #theTable{
+    display: none;
+  }
+  #loading{
+    width:96%;
+    position: absolute;
+    top:40%;
+  }
+  #loading img{
+    position: relative;
+    top:30%;
+    display:block;
+    margin:auto;
+    animation-name: fading;
+    animation-duration: 4s;
+    opacity: 0;
+  }
+  @keyframes fading {
+    0%{opacity: 0;}
+    25%{opacity: 1;}
+    50%{opacity: 0;}
+    75%{opacity: 1;}
+    100%{opacity: 0;}
+}
+  #thanks{
+    font-size: 80px;
+    margin: auto;
+    width: 95%;
+    text-align: center;
+    display: none;
+    font-family: 'Dancing Script', cursive;
+  }
+  #guestTable{
+
+  text-align: center;
+  margin: 0 auto;
+  width: 90%;
+  cursor: default;
+  border-collapse: collapse;
+  border:none;
+  font-family: 'Bellefair', serif;
+  font-size: 35px;
+}
+#guestTable td{
+  padding: 0;
+}
+  input[type='checkbox'] {
+    opacity: 0;
+    z-index: -1;
+  }
+
+input[type='checkbox']+label {
+  width: 40px;
+  height: 40px;
+  display: block;
+  margin: auto;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  text-indent: -999px;
+  overflow: hidden;
+  border: 1px solid black;
+  cursor: pointer;
+  }
+  #theTable label{
+    border: 1px solid black;
+    background: transparent url(http://katheermizal.info/works/working-with-checkbox/assets/images/tick-icon-transparent.png) no-repeat;
+    background-position: 60% -40px;
+    transition: background .4s ease;
+  }
+  </style>
+</template>

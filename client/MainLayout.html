@@ -1,0 +1,46 @@
+<template name = "MainLayout">
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+  <div class="row" style="width:95%; margin: auto; z-index: 4; background-color: white; display: fixed">
+  	<div class="col-md-4">
+	    <div class = "title">
+	    <img src="/images/rings.jpg" alt="Loading..." style="width:65px; height = 65px;margin-left: 4%" align="middle">Dunkerton Wedding
+	  </div>
+  </div>
+  <div class="col-md-4"></div>
+
+	<div class="col-md-4">
+		{{#if currentUser}}
+		<ul id="top">
+			<li id="users">Users</li>
+			<li id="add">Add</li>
+			<li id="list">Guest List</li>
+			<li id="logout">Logout</li>
+		</ul>
+		{{/if}}
+	</div>
+
+</div>
+
+  <main class = "main-layout" style="min-height:20em">
+      {{> Template.dynamic template = main}}
+  </main>
+  <style type="text/css">
+  	#top li{
+  		display: inline;
+  		font-family: 'Playfair Display', serif;
+  		font-style: italic;
+  		padding: 1em;
+  		font-size: 1.2em;
+  		font-weight: bold;
+  		cursor: pointer;
+  	}
+  	#top{
+  		margin-top: 1.4em;
+  	}
+    @media only screen and (max-width: 750px) {
+    .title {
+        font-size:20px;
+    }
+}
+  </style>
+</template>

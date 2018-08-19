@@ -1,0 +1,172 @@
+<template name="addEditUserModal">
+  <div class="modal fade" id="add-edit-user-modal" tabindex="-1" role="dialog" aria-labelledby="add-edit-user-modal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="add-edit-user">{{modalLabel}} User</h4>
+      </div>
+      <form id="add-edit-event-form">
+        <div class="modal-body" id="modalBody">
+          <div class = "row" style="display:block">
+            <div class="col-xs-1"></div>
+            <div class="col-xs-6">
+              <div class="row">
+                <label for="fName">First Name</label>
+                <input type="text" name="fName" class="form-control" value="{{user.rowInfo.profile.firstName}}">
+              </div>
+              <div class="row">
+                <label for="lName">Last Name</label>
+                 <input type="text" name="lName"  class="form-control" value="{{user.rowInfo.profile.lastName}}">
+              </div>
+              <div class="row">
+                <label for="email">Email</label>
+              {{#if modalType 'edit'}}
+              <input type="text" name="email" class="form-control" value="{{email}}" readonly>
+              {{else}}
+              <input type="text" name="email" class="form-control" value="{{email}}">
+              {{/if}}
+              </div>
+              <div class="row">
+                <label for="password1">New Password</label>
+                <input type="password" name="password1" class="form-control">
+              </div>
+              <div class="row">
+                <label for="password2">Confirm Password</label>
+                <input type="password" name="password2" class="form-control">
+              </div>
+            </div>
+          </div>
+    </div>
+        <div class="modal-footer">
+            {{#if modalType 'edit'}}
+            <button type ="button" id="delete" class="btn btn-danger pull-left delete-event">Delete User</button>
+            {{else if modalType 'editP'}}
+            <button type ="button" id="delete" class="btn btn-danger pull-left delete-event">Delete User</button>
+            {{/if}}
+          <button type="button" id = "submit" class="btn btn-success">{{modalLabel}} User</button>
+          <button type="button" class="btn btn-default" id ="cancel" data-dismiss="modal">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<style>
+.row{
+  padding-bottom: 2em;
+}
+.add-edit-user-modal{
+  height: 70%;
+}
+.emailDOBRow{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+#group:hover{
+  text-decoration: underline;
+}
+#groupTable{
+  left: 1em;
+  width: 550px;
+  height: auto;
+  border-collapse: collapse;
+  visibility: hidden;
+  position: absolute;
+}
+#groupTable2{
+  width: 269px;
+  border: 1px solid #E5E4E4;
+  font-size: .9em;
+  cursor: pointer;
+  position: absolute;
+  opacity: 1;
+  background-color: white;
+}
+#groupTable4{
+  overflow: auto;
+  font-size: 7px;
+  padding: 5px;
+  width: 550px;
+  visibility: hidden;
+  font-size: 1.1em;
+  cursor: pointer;
+  opacity: 1;
+  background-color: white;
+}
+#groupTable3{
+  width: 250px;
+  padding-top:1em;
+}
+#scrollTable{
+  height: 100px;
+  overflow:auto;
+}
+#scrollTable2{
+  height: 100px;
+  overflow:auto;
+}
+#groupTable3 td{
+ border: 1px solid grey;
+
+}
+#groupTable td {
+  width:500px;
+  padding: 10px;
+  border: 1px solid #E5E4E4;
+}
+#groupTable tr:hover, #groupTable2 tr:hover, #groupTable3 tr:hover,#groupTable4 tr:hover {
+  background-color: #f1f1f1;
+}
+#groupTable tr:nth-child(even){
+  background-color: #f2f2f2
+}
+#groupTable3 tr:nth-child(even){
+  background-color: #f2f2f2
+}
+.group {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition: all 0.1s;
+}
+.group:hover{
+  color:white;
+  text-decoration: none;
+  background-color: darkgreen;
+  transition: all 0.3s;
+  font-weight: bold;
+}
+.fa-arrow-left:hover{
+  color: green;
+  font-size: 2em;
+  transition: all 0.1s;
+}
+.fa-arrow-left{
+  position: absolute;
+  font-size: 1.3em;
+  left: 20px;
+  transition: all 0.2s;
+}
+#blank{
+  height: 41px;
+  transition: all 0.3s;
+}
+#blank:hover{
+  background-color: lightgreen;
+  transition: all 0.3s;
+}
+.fa-times:hover{
+  font-size: 1.2em;
+  color: darkred;
+  transition: all 0.2s;
+}
+
+</style>
+</template>

@@ -1,0 +1,86 @@
+<template name="addpeople">
+<link href="https://fonts.googleapis.com/css?family=News+Cycle" rel="stylesheet">
+
+  <div style="padding-left:1em;display:inline-block; font-size: 2em;">
+    <label for ="groupName" style="font-family: 'News Cycle', sans-serif;">Group Code</label>
+    <input type = "text" name = "groupName" id="groupName">
+  </div>
+  <div style="padding-left:1em;display:inline-block">
+    <button type="button" class="submit">Submit</button>
+  </div>
+<br><br><br>
+<div id="theTable">
+  <table id = "groupTable">
+    <th>
+      <td style="width:550px;">
+        Group Members(FirstName LastName)
+      </td>
+    </th>
+    {{#each getArray}}
+    <tr>
+      <td>
+        <a style="text-decoration:none; color: black; overflow:auto;">{{this}}</a>
+        <i id = "x" class="fa fa-times" style="float:right; color: red;" onclick="deleteSomeRow(this)"></i>
+      </td>
+    </tr>
+    {{/each}}
+    {{#each getAdded}}
+    <tr>
+      <td>
+        <a style="text-decoration:none; color: black;">{{this}}</a>
+        <i id = "x" class="fa fa-times" style="float:right; color: red;" onclick="deleteSomeRow(this)"></i>
+      </td>
+    </tr>
+    {{/each}}
+    <tr>
+      <td id="blank">
+        <input type="text" placeholder="Add New" id="addNew">
+          <i class="fa fa-plus" style="float:right"> </i>
+      </td>
+    </tr>
+  </table>
+</div>
+  <script>
+    function deleteSomeRow(o){
+      if ( confirm( 'Are you sure?' ) ) {
+      var p=o.parentNode.parentNode;
+      p.parentNode.removeChild(p);
+    }
+    }
+    </script>
+
+  <style>
+  .submit{
+    padding:.5em;
+  border: 1px solid #fcc288;
+  border-radius: 2px;
+  font-size: 1.5em;
+  background:transparent;
+  font-family: 'Adamina', serif;
+  font-style: italic;
+  }
+  #theTable{
+    height: 28em;
+    overflow: auto;
+  }
+  #groupTable{
+    left: 1em;
+    font-size: 2em;
+    width: 550px;
+    border-collapse: collapse;
+  }
+  #groupTable td {
+    font-family: 'News Cycle', sans-serif;
+    text-align: left;
+    width:500px;
+    padding: 10px;
+    border: 1px solid #E5E4E4;
+    }
+  #groupTable tr:hover{
+    background-color: #f1f1f1;
+  }
+  #groupTable tr:nth-child(even){
+    background-color: #f2f2f2
+  }
+  </style>
+</template>

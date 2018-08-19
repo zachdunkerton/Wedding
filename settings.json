@@ -1,0 +1,8 @@
+{
+  "galaxy.meteor.com": {
+    "env": {
+      "MONGO_URL": "mongodb://zachdunkerton:To71*hTCcI@ds153978.mlab.com:53978/megandzachwedding",
+      "MAIL_URL": "smtps://zachdunkerton@gmail.com:06Haveanice08@smtp.gmail.com:465"
+    }
+  }
+}

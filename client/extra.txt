@@ -1,0 +1,37 @@
+  <div id="slideshow" style="width: 95%; margin: 0 auto">
+    <div>
+      <img src="/images/pic1.jpg" alt="Pic 1" style="width:50em; height = 30em;" align="middle">
+    </div>
+    <div>
+      <img src="/images/pic2.jpg" alt="Pic 1" style="width:50em; height = 30em;" align="middle">
+    </div>
+    <div>
+      <img src="/images/pic3.jpg" alt="Pic 1" style="width:50em; height = 30em;" align="middle">
+    </div>
+    <div>
+      <img src="/images/pic4.jpg" alt="Pic 1" style="width:50em; height = 30em;" align="middle">
+    </div>
+    <div>
+      <img src="/images/pic5.jpg" alt="Pic 1" style="width:50em; height = 30em;" align="middle">
+    </div>
+    <div>
+      <img src="/images/pic6.jpg" alt="Pic 1" style="width:50em; height = 30em;" align="middle">
+    </div>
+    <div>
+      <img src="/images/pic7.jpg" alt="Pic 1" style="width:50em; height = 30em;" align="middle">
+    </div>
+    <div>
+      <img src="/images/pic8.jpg" alt="Pic 1" style="width:50em; height = 30em;" align="middle">
+    </div>
+   </div>
+   <script>
+   $("#slideshow > div:gt(0)").hide();
+    setInterval(function() {
+      $('#slideshow > div:first')
+        .fadeOut(1000)
+        .next()
+        .fadeIn(1000)
+        .end()
+        .appendTo('#slideshow');
+    }, 7000);
+   </script>

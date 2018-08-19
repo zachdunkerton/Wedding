@@ -1,0 +1,79 @@
+<!--Use the bootstrap tables-->
+
+<template name="rsvp">
+  <button class = "addUser">Add Guest</button>
+<input type="text" class = "search" placeholder="Search...">
+<br><br>
+  <div id="theTable">
+    <table id="peopleTable">
+  <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Group Code</th>
+    <th>Status</th>
+  </tr>
+  {{#each person}}
+  <tr>
+    <td class = "block">{{this.firstName}}</td>
+    <td class = "block" id="date">{{this.lastName}}</td>
+    <td class = "block">{{this.group}} 
+      <i id = "deleteGuest" class="fa fa-times" style="float:right; color: red;"></i>
+    </td>
+    <td style="text-align: center">{{#if coming}}
+        <i class="fa fa-check-square" aria-hidden="true" style="color:green; font-size:2em;margin:auto;"></i>
+        {{else if notcoming}}
+        <i class="fa fa-times-circle" aria-hidden="true" style="color:red; font-size:2em;margin:auto;"></i>
+        {{else if unsure}}
+        <i class="fa fa-exclamation-triangle" aria-hidden="true" style="color:yellow; font-size:2em;margin:auto;"></i>
+        {{/if}}
+      </td>
+  </tr>
+  {{/each}}
+</table>
+  </div>
+  <style>
+  #deleteGuest{
+    cursor:pointer;
+  }
+  .addUser{
+  padding: 10px;
+  font-weight: bolder;
+}
+.search{
+  padding: 10px;
+  font-weight: bolder;
+  position: absolute;
+  right:10%;
+}
+  #peopleTable{
+  position: relative;
+  width: 95%;
+  cursor: default;
+  border-collapse: collapse;
+}
+#peopleTable th{
+  background-color: #031229;
+  color: #f2f2f2;
+  font-size: 17px;
+  border: 2px solid #a5a5af;
+  border-bottom: 2px solid #ea6922;
+  text-align: left;
+  padding: 8px;
+}
+#peopleTable td{
+  border: 1px solid #000000;
+  text-align: left;
+  padding: 8px;
+}
+#peopleTable td{
+  font-size: 15px;
+}
+#peopleTable tr:nth-child(even){
+  background-color: #f2f2f2
+}
+#peopleTable tr:hover{background-color:#DCDCDC}
+.addUser{
+  margin-bottom: 10px;
+}
+  </style>
+</template>

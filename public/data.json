@@ -1,0 +1,21 @@
+{
+	"pizzas":[
+		{"title": "Classic", "description":"Tomatoes, fresh mozzarella, basil, olive oil", "Price":"$10.00"},
+		{"title": "Thai", "description":"Chicken in Pad Thai sauce, peanuts, carrots, cilantro, siracha", "Price":"$11.00"},
+		{"title": "Buffalo", "description":"Blue cheese sauce, crispy buffalo chicken, finished with Frank’s Red Hot", "Price":"$11.00"},
+		{"title": "Maryland", "description":"Creamy crab dip, cheese, and Old Bay seasoning on pretzel crust", "Price":"$15.00"},
+	],
+	"Salads":[
+		{"title": "House", "description":"Baby Spinach, tomatoes, peppers, oil and vinager", "Price":"$5.00"},
+		{"title": "Super Food", "description":"Kale, Avocado, Broccoli, Pomegranate dressing", "Price":"$7.00"},
+		{"title": "Spicy", "description":"Banana Peppers, Jalapenos, Peanuts, Apples, Blue Cheese, Red Hot", "Price":"$6.00"},
+	],
+	"Sides":[
+		{"title":"Grilled Corn", "description":"Mayo, Guajillo Cheese, Pepper, Lime", "Price":"4"},
+		{"title":"Roasted Broccoli", "description":"Olive Oil, Salt, Garlic", "Price":"3"},
+		{"title":"Coconut Rice", "description":"Peppers, Lime, Pineapple", "Price":"3"},
+		{"title":"Bread Sticks", "description":"Butter, Garlic, Herbs", "Price":"1"},
+
+	]
+}
+
